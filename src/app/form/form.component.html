@@ -1,0 +1,35 @@
+<div class="form">
+    <h3>Add a new OTP Code</h3>
+    <p>Secret</p>
+    <input type="text" [(ngModel)]="this.form.secret"/>
+    <p>SHA</p>
+    <div class="cbs">
+        <a class="cb easing" [class.active]="this.form.sha === 'SHA1'" (click)="this.form.sha = 'SHA1'"></a>
+        <p (click)="this.form.type = 'TOTP'">SHA-1</p>
+        <a class="cb easing" [class.active]="this.form.sha === 'SHA2'" (click)="this.form.sha = 'SHA2'"></a>
+        <p (click)="this.form.type = 'HOTP'">SHA-2</p>
+        <a class="cb easing" [class.active]="this.form.sha === 'SHA256'" (click)="this.form.sha = 'SHA256'"></a>
+        <p (click)="this.form.type = 'HOTP'">SHA-256</p>
+    </div>
+    <p>Encoding</p>
+    <div class="cbs">
+        <a class="cb easing" [class.active]="this.form.encoding === 'raw'" (click)="this.form.encoding = 'raw'"></a>
+        <p (click)="this.form.type = 'TOTP'">Raw</p>
+        <a class="cb easing" [class.active]="this.form.encoding === 'B32'" (click)="this.form.encoding = 'B32'"></a>
+        <p (click)="this.form.type = 'HOTP'">Base 32</p>
+    </div>
+    <p>OTP Type</p>
+    <div class="cbs">
+        <a class="cb easing" [class.active]="this.form.type === 'TOTP'" (click)="this.form.type = 'TOTP'"></a>
+        <p (click)="this.form.type = 'TOTP'">TOTP</p>
+        <a class="cb easing" [class.active]="this.form.type === 'HOTP'" (click)="this.form.type = 'HOTP'"></a>
+        <p (click)="this.form.type = 'HOTP'">HOTP</p>
+    </div>
+    <a class="button easing" (click)="this.addCode();">
+        Add Code
+    </a>
+    <p class="or">OR</p>
+    <a class="button easing" (click)="this.generateCode();">
+        Create Random
+    </a>
+</div>

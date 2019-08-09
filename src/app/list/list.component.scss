@@ -1,0 +1,129 @@
+@import '../styles.scss';
+
+div.list {
+    width: calc(100% - 30px);
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    background: lighten($bg, 5%);
+
+    h3 {
+        font-size: 24px;
+        font-weight: 400;
+        margin: 0 0 15px;
+        text-align: center;
+    }
+
+    div.otp-item {
+        position: relative;
+
+        a.delete-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: lighten($bg, 10%);
+
+            i {
+                font-size: 14px;
+                margin: 0 0 2.5px;
+            }
+
+            &:hover {
+                background: lighten($bg, 15%);
+                transform: scale(1.125);
+            }
+        }
+
+        qrcode {
+            display: block;
+            width: 128px;
+            margin: 15px auto;
+        }
+
+        div.secret-box {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 40px;
+
+            p.label {
+                font-size: 18px;
+                font-weight: bold;
+                width: 120px;
+            }
+
+            p.secret {
+                width: calc(100% - 120px);
+            }
+
+            div.secret-wrap {
+                position: absolute;
+                left: 120px;
+                top: 5px;
+                width: calc(100% - 120px);
+                height: 30px;
+                border-radius: 5px;
+                background: lighten($bg, 10%);
+                opacity: 0;
+                pointer-events: none;
+
+                &.active {
+                    opacity: 1;
+                    pointer-events: inherit;
+                }
+            }
+
+            a.reveal {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 80px;
+                top: 5px;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: lighten($bg, 10%);
+            }
+        }
+
+        div.code {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 70px;
+
+            p.label {
+                font-size: 18px;
+                font-weight: bold;
+                width: 120px;
+            }
+
+            div.digit-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 90px;
+                height: 40px;
+                border-radius: 5px;
+                background: lighten($bg, 10%);
+                color: $pc;
+                margin: 0 15px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            div.timer {
+                font-size: 18px;
+                font-weight: bold;
+                margin: 0 15px;
+            }
+        }
+    }
+}

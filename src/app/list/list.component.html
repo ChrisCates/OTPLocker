@@ -1,0 +1,32 @@
+<div class="list">
+    <h3>Your OTP Codes</h3>
+
+    <div class="otp-item" *ngFor="let code of this.otp.codes; let i = index;">
+        <a class="delete-item easing" (click)="this.otp.codes.splice(i, 1); this.otp.items.splice(i, 1); this.otp.updateStorage();">
+            <i class="far fa-trash-alt"></i>
+        </a>
+        <qrcode [qrdata]="code.toString()" [size]="128" [level]="'M'"></qrcode>
+        <div class="secret-box">
+            <p class="label">Secret</p>
+            <p class="secret">{{code.secret.raw.toString()}}</p>
+            <div class="secret-wrap easing" [class.active]="!code.hideSecret"></div>
+            <a class="reveal easing" (click)="code.hideSecret = !code.hideSecret">
+                <i class="fas" [class.fa-eye-slash]="code.hideSecret" [class.fa-eye]="!code.hideSecret"></i>
+            </a>
+        </div>
+        <div class="code">
+            <p class="label">Code</p>
+            <div class="digit-box">
+                {{code.generate().slice(0, 3)}}
+            </div>
+            <div class="digit-box">
+                {{code.generate().slice(3, 6)}}
+            </div>
+            <div class="timer">
+                Time left
+                <i class="fas fa-stopwatch"></i>
+                {{this.otp.getTimer() ? this.otp.getTimer() : 0}}
+            </div>
+        </div>
+    </div>
+</div>

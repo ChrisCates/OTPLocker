@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700');
+
+// CSS Variables
+:root {
+    --primary: #327CCB;
+    --fg: white;
+    --bg: #080808;
+}
+
+// Default stylings
+html, body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Source Sans Pro', 'Arial', 'Monospace';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    color: var(--fg);
+    background: var(--bg);
+    overflow-x: none;
+    overflow-y: auto;
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+*.easing {
+    transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+input, textarea, button {
+    font-family: inherit;
+}

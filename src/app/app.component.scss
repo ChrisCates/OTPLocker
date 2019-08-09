@@ -1,0 +1,26 @@
+@import './styles.scss';
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: $header-height;
+    background: lighten($bg, 5%);
+
+    h1 {
+        font-size: 32px;
+        font-weight: 400;
+    }
+}
+
+div.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: $page-height;
+    margin: auto;
+
+    app-form { width: 480px; }
+    app-list { width: calc(100% - 480px); }
+}
