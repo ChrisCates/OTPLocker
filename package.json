@@ -25,7 +25,7 @@
     "D": "^1.0.0",
     "angular-cli-ghpages": "^0.6.0-rc.2",
     "angularx-qrcode": "^1.6.4",
-    "electron": "^7.2.4",
+    "electron": "^9.4.0",
     "hi-base32": "^0.5.0",
     "otpauth": "^4.0.0",
     "rxjs": "~6.4.0",
